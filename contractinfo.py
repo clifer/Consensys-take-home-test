@@ -1,3 +1,4 @@
+import sys
 import web3
 from web3 import Web3, HTTPProvider
 from argparse import ArgumentParser
@@ -11,6 +12,10 @@ args = parser.parse_args()
 apihost = args.host
 
 w3 = Web3(HTTPProvider(apihost))
+
+if not w3.isAddress(args.contractAddress):
+    sys.exit('\n' + args.contractAddress + ' is not a valid eth address\n')
+
 
 contractAddress = w3.toChecksumAddress(args.contractAddress)
 
@@ -36,5 +41,5 @@ if code:
     print( '\nBlock: ' + str(contractBlockHash))
     print( 'Transaction: ' + str(contractTx) + '\n')
 else:
-    print('Err: it appears that ' + contractAddress + ' is not a contract address')
+    sys.exit('\nErr: it appears that ' + contractAddress + ' is not a contract address\n')
 
