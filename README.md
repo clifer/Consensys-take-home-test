@@ -5,13 +5,13 @@ virtualenv -p python3.6 ~/virtualenvs/consensys
 # Activate the virtual environment
 . ~/virtualenvs/consensys/bin/activate
 
-# Install requirements (web3)
-
-pip install -r requirements.txt
-
 # Install this repository
 
 git clone https://github.com/clifer/Consensys-take-home-test.git
+
+# Install requirements (web3)
+
+pip install -r requirements.txt
 
 # How to Execute
 
