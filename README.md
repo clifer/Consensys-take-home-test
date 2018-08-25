@@ -9,6 +9,10 @@ virtualenv -p python3.6 ~/virtualenvs/consensys
 
 pip install -r requirements.txt
 
+# Install this repository
+
+git clone https://github.com/clifer/Consensys-take-home-test.git
+
 # How to Execute
 
 python contractinfo.py <contract address> --host <API URL>

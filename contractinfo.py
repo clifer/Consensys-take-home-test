@@ -15,7 +15,9 @@ w3 = Web3(HTTPProvider(apihost))
 contractAddress = w3.toChecksumAddress(args.contractAddress)
 
 blockNumber = w3.eth.blockNumber
-blockNumber = 3978300
+# use below for a quick test
+# blockNumber = 3978300
+
 code = w3.eth.getCode(contractAddress, block_identifier=blockNumber)
 
 if code:
